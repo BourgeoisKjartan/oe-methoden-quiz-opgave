@@ -27,6 +27,7 @@ namespace prb_03_oef_01_start.wpf
 
         int score = +1;
 
+        #region Methoden
         private void disableAllButtons()
         {
             btnAntw1a.IsEnabled = false;
@@ -40,7 +41,7 @@ namespace prb_03_oef_01_start.wpf
             btnAntw3c.IsEnabled = false;
 
         }
-        
+
         private void enableButtonQuestionA()
         {
             btnAntw1a.IsEnabled = true;
@@ -109,7 +110,9 @@ namespace prb_03_oef_01_start.wpf
             lblScore.Content = 0;
 
         }
+        #endregion
 
+        #region Events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             beginSituatie();
@@ -126,9 +129,6 @@ namespace prb_03_oef_01_start.wpf
             disableButtonQuestionA();
             enableButtonQuestionB();
 
-
-
-
         }
 
         private void btnFoutAntwoordVraag1_Click(object sender, RoutedEventArgs e)
@@ -141,11 +141,9 @@ namespace prb_03_oef_01_start.wpf
         {
             lblFeedBack2.Content = ".Net Core is juist";
             wrpVraag3.Visibility = Visibility.Visible;
-            lblScore.Content = score+1;
+            lblScore.Content = score + 1;
             disableButtonQuestionB();
             enablaButtonQuestionC();
-
-
         }
 
         private void btnFoutAntwoordVraag2_Click(object sender, RoutedEventArgs e)
@@ -176,6 +174,7 @@ namespace prb_03_oef_01_start.wpf
             enableButtonQuestionA();
             enableButtonQuestionB();
             enablaButtonQuestionC();
-        }
+        } 
+        #endregion
     }
 }
